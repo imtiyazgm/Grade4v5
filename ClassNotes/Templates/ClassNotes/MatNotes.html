@@ -1,0 +1,60 @@
+{% extends 'ClassNotes/base.html' %}
+{% block content  %}
+{% if user.is_staff %}
+     <div class="container mt-4">
+         <h5  style="text-align:center" class ="bg-warning"> Maths Notes </h5>
+        <table class="table bg-info">
+            <thead>
+                <tr>
+                    <th>Chapter</th>
+                    <th>Download</th>
+                    <th colspan="2">Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for Note in MatNotes %}
+                    <tr>
+                        <td>{{ Note.Chapter}}</td>
+                        <td><a href="{{ Note.MatNotesFile.url }}" class="btn btn-danger" target="_blank">Download</a></td>
+                        
+                        <td>
+                            <form method="POST" action="{% url 'deleteMatNotes' Note.pk %}">
+                                    {% csrf_token%}
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+
+                            </form>
+                        </td>  
+                        
+                         
+                    </tr>
+                {% endfor %}
+            </tbody>
+    
+        </table>
+    
+     </div>
+{% else %}
+    <div class="container mt-4">
+         <h5  style="text-align:center" class ="bg-warning"> Maths Notes </h5>
+        <table class="table bg-info">
+            <thead>
+                <tr>
+                    <th>Chapter</th>
+                    <th>Download</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for Note in MatNotes %}
+                    <tr>
+                        <td>{{ Note.Chapter}}</td>
+                        <td><a href="{{ Note.MatNotesFile.url }}" class="btn btn-danger" target="_blank">Download</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+    
+        </table>
+    
+     </div>
+{% endif %}    
+{% endblock content  %}

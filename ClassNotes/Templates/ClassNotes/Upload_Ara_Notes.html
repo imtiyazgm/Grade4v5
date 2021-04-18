@@ -1,0 +1,19 @@
+{% extends 'ClassNotes/base.html' %}
+{% block content  %}
+
+    <div class="container mt-4">
+    {% if user.is_staff %}
+        <h3 class ="bg-warning">Upload Arabic Notes Here</h3>
+        <hr>
+        <div class="container mt-4  ">
+            <form method="POST" enctype="multipart/form-data" class ="bg-warning">
+                {% csrf_token %}
+                        {{ Ara_form }}
+                <input type="submit" value="submit"> 
+            </form>
+        <div class="container mt-4">
+    {% else %}
+    <p>You are not authurised to upload</p>
+    {% endif %}
+</div>
+{% endblock content  %}

@@ -1,0 +1,62 @@
+{% extends 'ClassNotes/base.html' %}
+{% block content  %}
+{% if user.is_staff %}
+<div class="container mt-4">
+       
+    <div class="container mt-4">
+        <h5 class ="bg-warning"  style="text-align:center"> English Worksheets </h5>
+        <table class="table bg-info">
+            <thead>
+                <tr>
+                    <th>Chapter</th>
+                    <th>Download</th>
+                    <th colspan="2">Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for WS in Eng_WS %}
+                    <tr>
+                        <td>{{ WS.Chapter}}</td>
+                        <td><a href="{{ WS.EngWSFile.url }}" class="btn btn-danger" target="_blank">Download</a></td>
+                        <td>
+                            <form method="POST" action="{% url 'deleteEngWS' WS.pk %}">
+                                    {% csrf_token%}
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+
+                            </form>
+                        </td>  
+                        
+                        
+                         
+                    </tr>
+                {% endfor %}
+            </tbody>
+    
+        </table>
+    </div>
+</div>
+{% else %}
+    <div class="container mt-4">
+        <h5 class ="bg-warning"> English Worksheets </h5>
+        <table class="table bg-info">
+            <thead>
+                <tr>
+                    <th>Chapter</th>
+                    <th>Download</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for WS in Eng_WS %}
+                    <tr>
+                        <td>{{ WS.Chapter}}</td>
+                        <td><a href="{{ WS.EngWSFile.url }}" class="btn btn-danger" target="_blank">Download</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+    
+        </table>
+    </div>
+</div>
+{% endif %}  
+{% endblock content  %}

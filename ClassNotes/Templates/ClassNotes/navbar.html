@@ -1,0 +1,93 @@
+ {% load static %}
+ <style>
+   .UserDetails {
+     font-size : 15px;
+     color: #fff;
+     margin-right: 30px;
+   }
+
+ </style>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-secondary ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"> <img src="{% static 'images/Igra_Logo.svg' %}" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  {% if user.is_authenticated %} 
+      <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'SubPage' %}">HOME</a>
+          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                ENGLISH
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'EngNotes' %}">ENG NOTES</a></li>
+                <li><a class="dropdown-item"  href="{% url 'EngWsheet' %}">ENG WORKSHEETS</a></li>
+              </ul>
+          </li>       
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                HINDI
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'HinNotes' %}">HINDI NOTES</a></li>
+                <li><a class="dropdown-item"  href="{% url 'HinWsheet' %}">HINDI WORKSHEETS</a></li>
+              </ul>
+          </li>       
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                ARABIC
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'AraNotes' %}">ARABIC NOTES</a></li>
+                <li><a class="dropdown-item"  href="{% url 'AraWsheet' %}">ARABIC WORKSHEETS</a></li>
+              </ul>
+          </li>       
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                MATHS
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'MatNotes' %}">MATHS NOTES</a></li>
+                <li><a class="dropdown-item"  href="{% url 'MatWsheet' %}">MATHS WORKSHEETS</a></li>
+              </ul>
+          </li>    
+           <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                SCIENCE
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'SciNotes' %}">SCIENCE NOTES</a></li>
+                <li><a class="dropdown-item"  href="{% url 'SciWsheet' %}">SCIENCE WORKSHEETS</a></li>
+              </ul>
+          </li> 
+           <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                IND.SST
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'IssNotes' %}">IND.SST NOTES</a></li>
+                <li><a class="dropdown-item"  href="{% url 'IssWsheet' %}">IND.SST WORKSHEETS</a></li>
+              </ul>
+          </li> 
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                UAE SST
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'UssNotes' %}">UAE SST NOTES</a></li>
+                <li><a class="dropdown-item"  href="{% url 'UssWsheet' %}">UAE SST WORKSHEETS</a></li>
+              </ul>
+          </li>   
+        </ul>
+      </div>
+    </div>
+    <span class="UserDetails ">Welcome {{ request.user}}</span>
+    <span><a class="UserDetails " href="{% url 'logout_Page' %}">Logout</a></span>
+  {% else %}
+    <span><a class="UserDetails text-dark" href="{% url 'home' %}">Login</a></span>
+  {% endif %}
+</nav>

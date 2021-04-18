@@ -1,0 +1,326 @@
+
+<style>
+    li{
+        list-style: none;
+        margin-top: 10px;
+         
+    }
+
+
+  .container.mt-4 {
+    max-width: 800px;
+    border: 1px #000 solid;
+    background-color: rgb(13, 89, 119);
+    margin-left: auto;
+    margin-right: auto;
+    }
+    .col-sm {
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+        color: #fff;
+        border-radius: 20px;
+    }
+
+
+
+
+  .btn{
+      width : 125px;
+      margin : 2px auto;
+    
+
+  }  
+
+</style>
+{% extends 'ClassNotes/base.html' %}
+
+
+ {% block  content %}
+    {% if user.is_staff %}
+        <div class="container mt-4" >
+
+        
+
+
+<!--
+    <div class="card w-25">
+        <div class="card-body">
+            <h5 class="card-title">ENGLISH</h5>
+            <hr>
+            <a href="{% url 'EngNotes' %}" class="btn btn-warning text-dark">View Notes</a>
+            <a href="{% url 'EngWsheet' %}" class="btn btn-primary">View WS</a>
+            <br>
+            <a href="{% url 'Upload_Notes' %}" class="btn btn-danger">Upload Notes</a>
+            <a href="{% url 'Upload_Eng_WS' %}" class="btn btn-success">Upload WS</a>
+            
+        </div>
+    </div>-->
+
+<!-- ENGLISH-->
+<div class="container pt-4">
+<div class="row">
+    <div class="col-sm bg-Danger">
+            <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#ENGLISH" role="button" aria-expanded="false" aria-controls="ENGLISH"> ENGLISH </a>
+            </p>
+            <div class="collapse" id="ENGLISH">
+                <div class="card card-body">
+                    <a href="{% url 'EngNotes' %}" class="btn btn-warning text-dark">View Notes</a>
+                    <a href="{% url 'EngWsheet' %}" class="btn btn-primary">View WS</a>
+                    <a href="{% url 'Upload_Notes' %}" class="btn btn-danger">Upload Notes</a>
+                    <a href="{% url 'Upload_Eng_WS' %}" class="btn btn-success">Upload WS</a>
+                </div>
+            </div>
+    </div>
+    <div class="col-sm bg-Warning">
+            <!-- HINDI-->
+            <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#HINDI" role="button" aria-expanded="false" aria-controls="HINDI"> HINDI </a>
+            </p>
+            <div class="collapse" id="HINDI">
+                <div class="card card-body">
+                    <a href="{% url 'HinNotes' %}" class="btn btn-warning text-dark"> View Notes</a>
+                    <a href="{% url 'HinWsheet' %}" class="btn btn-primary text-dark"> View WS</a>
+                    <a href="{% url 'Upload_Hin_Notes' %}" class="btn btn-danger">Upload Notes</a>
+                    <a href="{% url 'Upload_Hin_WS' %}" class="btn btn-success">Upload WS</a>
+                </div>
+            </div>
+    </div>
+    <div class="col-sm bg-success">       
+            <!-- ARABIC-->
+            <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#ARABIC" role="button" aria-expanded="false" aria-controls="ARABIC"> ARABIC </a>
+            </p>
+            <div class="collapse" id="ARABIC">
+                <div class="card card-body">
+                    <a href="{% url 'AraNotes' %}"class="btn btn-warning text-dark"> View Notes</a>
+                    <a href="{% url 'AraWsheet' %}"class="btn btn-primary text-dark"> View WS</a>
+                    <a href="{% url 'Upload_Ara_Notes' %}" class="btn btn-danger">Upload Notes</a>
+                    <a href="{% url 'Upload_Ara_WS' %}" class="btn btn-success">Upload WS</a>
+                </div>
+            </div>
+        </div>
+     </div>   
+</div>
+<div class="container">
+<div class="row">
+    <div class="col-sm bg-Secondary">
+            <!-- MATHS-->
+            <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#MATHS" role="button" aria-expanded="false" aria-controls="MATHS"> MATHS </a>
+            </p>
+            <div class="collapse" id="MATHS">
+                <div class="card card-body">
+                    <a href="{% url 'MatNotes' %}"class="btn btn-warning text-dark"> View Notes</a>
+                    <a href="{% url 'MatWsheet' %}"class="btn btn-primary text-dark"> View WS</a>
+                    <a href="{% url 'Upload_Mat_Notes' %}" class="btn btn-danger">Upload Notes</a>
+                    <a href="{% url 'Upload_Mat_WS' %}" class="btn btn-success">Upload WS</a>
+                </div>
+            </div>
+    </div>
+    <div class="col-sm bg-Danger">
+            <!-- SCIENCE-->
+            <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#SCIENCE" role="button" aria-expanded="false" aria-controls="SCIENCE"> SCIENCE </a>
+            </p>
+            <div class="collapse" id="SCIENCE">
+                <div class="card card-body">
+                    <a href="{% url 'SciNotes' %}" class="btn btn-warning text-dark"> View Notes</a>
+                    <a href="{% url 'SciWsheet' %}" class="btn btn-primary text-dark"> View WS</a>
+                    <a href="{% url 'Upload_Sci_Notes' %}" class="btn btn-success">Upload Notes</a>
+                    <a href="{% url 'Upload_Sci_WS' %}" class="btn btn-danger">Upload WS</a>
+                </div>
+            </div>
+    </div>
+    <div class="col-sm bg-Warning">
+            <!-- INDIAN SST-->
+            <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#INDIANSST" role="button" aria-expanded="false" aria-controls="INDIANSST"> INDIAN SST </a>
+            </p>
+            <div class="collapse" id="INDIANSST">
+                <div class="card card-body">
+                    <a href="{% url 'IssNotes' %}" class="btn btn-warning text-dark"> View Notes</a>
+                    <a href="{% url 'IssWsheet' %}" class="btn btn-primary text-dark"> View WS</a>
+                    <a href="{% url 'Upload_Iss_Notes' %}" class="btn btn-success">Upload Notes</a>
+                    <a href="{% url 'Upload_Iss_WS' %}" class="btn btn-danger">Upload WS</a>
+                </div>
+            </div>
+    </div>
+<div class="container">
+    <div class="col-sm bg-Warning">
+            <!-- UAE SST-->
+            <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#UAESST" role="button" aria-expanded="false" aria-controls="UAESST"> UAE SST </a>
+            </p>
+            <div class="collapse " id="UAESST">
+                <div class="card card-body">
+                    <a href="{% url 'UssNotes' %}" class="btn btn-warning text-dark"> View Notes</a>
+                    <a href="{% url 'UssWsheet' %}" class="btn btn-primary text-dark"> View WS</a>
+                    <a href="{% url 'Upload_Uss_Notes' %}" class="btn btn-success">Upload Notes</a>
+                    <a href="{% url 'Upload_Uss_WS' %}" class="btn btn-danger">Upload WS</a> 
+                </div>
+            </div>
+    </div>
+</div>
+
+
+
+
+
+
+ 
+   <!--    <ul>
+     <li>
+          <a href="#" class="btn btn-primary">ENGLISH</a>
+          <a href="{% url 'EngNotes' %}" class="btn btn-warning text-dark"> View Notes</a>
+          <a href="{% url 'EngWsheet' %}" class="btn btn-warning text-dark"> View WS</a>
+          <a href="{% url 'Upload_Notes' %}" class="btn btn-danger">Upload Notes</a>
+          <a href="{% url 'Upload_Eng_WS' %}" class="btn btn-danger">Upload WS</a>
+          
+        </li>
+        <li>
+            <a href="#" class="btn btn-primary">HINDI</a>
+            <a href="{% url 'HinNotes' %}" class="btn btn-warning text-dark"> View Notes</a>
+            <a href="{% url 'HinWsheet' %}" class="btn btn-warning text-dark"> View WS</a>
+            <a href="{% url 'Upload_Hin_Notes' %}" class="btn btn-danger">Upload Notes</a>
+            <a href="{% url 'Upload_Hin_WS' %}" class="btn btn-danger">Upload WS</a>
+        </li>
+        <li>
+            <a href="#" class="btn btn-primary">ARABIC</a>
+            <a href="{% url 'AraNotes' %}"class="btn btn-warning text-dark"> View Notes</a>
+            <a href="{% url 'AraWsheet' %}"class="btn btn-warning text-dark"> View WS</a>
+            <a href="{% url 'Upload_Ara_Notes' %}" class="btn btn-danger">Upload Notes</a>
+            <a href="{% url 'Upload_Ara_WS' %}" class="btn btn-danger">Upload WS</a>
+        </li>
+        <li>
+            <a href="#" class="btn btn-primary">MATHS</a>
+            <a href="{% url 'MatNotes' %}"class="btn btn-warning text-dark"> View Notes</a>
+            <a href="{% url 'MatWsheet' %}"class="btn btn-warning text-dark"> View WS</a>
+            <a href="{% url 'Upload_Mat_Notes' %}" class="btn btn-danger">Upload Notes</a>
+            <a href="{% url 'Upload_Mat_WS' %}" class="btn btn-danger">Upload WS</a>
+        </li>
+        <li>
+            <a href="#" Class="btn btn-primary">SCIENCE </a>
+            <a href="{% url 'SciNotes' %}" class="btn btn-warning text-dark"> View Notes</a>
+            <a href="{% url 'SciWsheet' %}" class="btn btn-warning text-dark"> View WS</a>
+            <a href="{% url 'Upload_Sci_Notes' %}" class="btn btn-danger">Upload Notes</a>
+            <a href="{% url 'Upload_Sci_WS' %}" class="btn btn-danger">Upload WS</a>
+        </li>
+            
+        <li>
+            <a href="#" Class="btn btn-primary">INDIAN SST </a>
+            <a href="{% url 'IssNotes' %}" class="btn btn-warning text-dark"> View Notes</a>
+            <a href="{% url 'IssWsheet' %}" class="btn btn-warning text-dark"> View WS</a>
+            <a href="{% url 'Upload_Iss_Notes' %}" class="btn btn-danger">Upload Notes</a>
+            <a href="{% url 'Upload_Iss_WS' %}" class="btn btn-danger">Upload WS</a>
+        </li>
+        <li><a href="#" Class="btn btn-primary">UAE SST </a>
+            <a href="{% url 'UssNotes' %}" class="btn btn-warning text-dark"> View Notes</a>
+            <a href="{% url 'UssWsheet' %}" class="btn btn-warning text-dark"> View WS</a>
+            <a href="{% url 'Upload_Uss_Notes' %}" class="btn btn-danger">Upload Notes</a>
+            <a href="{% url 'Upload_Uss_WS' %}" class="btn btn-danger">Upload WS</a> 
+        </li>
+        
+    </ul>-->
+    
+</div>
+    {% else %}
+       <h4 style="text-align: center;" class="mt-3 bg-primary"> Welcome {{request.user}} </h4> 
+       
+<div class="container">
+    <div class="row">
+            <div class="col-sm bg-Danger">
+             
+                <h4 class="btn btn-primary" data-bs-toggle="collapse" href="#ENGLISH_USER" role="button" aria-expanded="false" aria-controls="ENGLISH_USER">ENGLISH</h4>
+                <div class="collapse " id="ENGLISH_USER">
+                    <div class="card card-body">
+                        <a href="{% url 'EngNotes' %}" class="btn btn-warning text-dark">  Notes</a>
+                        <a href="{% url 'EngWsheet' %}" class="btn btn-danger  "> Worksheets</a>
+                    </div> 
+                </div>       
+            </div>
+
+
+            <div class="col-sm bg-Warning ">
+                <h4 class="btn btn-primary" data-bs-toggle="collapse" href="#HINDI_USER" role="button" aria-expanded="false" aria-controls="HINDI_USER">HINDI</h4>
+                <div class="collapse " id="HINDI_USER">
+                    <div class="card card-body">
+                        <a href="{% url 'HinNotes' %}" class="btn btn-warning text-dark "> View Notes</a>
+                        <a href="{% url 'HinWsheet' %}" class="btn btn-danger "> Worksheets</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm bg-Danger">
+                
+                <h4 class="btn btn-primary" data-bs-toggle="collapse" href="#ARABIC_USER" role="button" aria-expanded="false" aria-controls="ARABIC_USER">ARABIC</h4>
+                <div class="collapse " id="ARABIC_USER">
+                    <div class="card card-body">
+                        <a href="{% url 'AraNotes' %}"class="btn btn-warning text-dark"> View Notes</a>
+                        <a href="{% url 'AraWsheet' %}"class="btn btn-danger "> Worksheets</a>  
+                    </div>
+                </div>        
+
+            </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+      <div class="col-sm bg-Warning">
+           <h4 class="btn btn-primary" data-bs-toggle="collapse" href="#MATHS_USER" role="button" aria-expanded="false" aria-controls="MATHS_USER">MATHS</h4>
+                <div class="collapse " id="MATHS_USER">
+                    <div class="card card-body">
+                        <a href="{% url 'MatNotes' %}"class="btn btn-warning text-dark"> View Notes</a>
+                        <a href="{% url 'MatWsheet' %}" class="btn btn-danger"> Worksheetss</a>
+                    </div>    
+                </div>
+       </div>        
+    <div class="col-sm bg-Danger ">
+      
+          <h4 class="btn btn-primary" data-bs-toggle="collapse" href="#SCIENCE_USER" role="button" aria-expanded="false" aria-controls="SCIENCE_USER">SCIENCE</h4>
+          <div class="collapse " id="SCIENCE_USER">
+            <div class="card card-body">
+                <a href="{% url 'SciNotes' %}" class="btn btn-warning text-dark"> View Notes</a>
+                <a href="{% url 'SciWsheet' %}" class="btn btn-danger"> Worksheets</a>
+          </div>
+        </div>
+          
+    </div>
+<div class="col-sm bg-Warning">
+          <h4 class="btn btn-primary" data-bs-toggle="collapse" href="#INDIANSST_USER" role="button" aria-expanded="false" aria-controls="INDIANSST_USER">INDIAN SST</h4>
+          <div class="collapse " id="INDIANSST_USER">
+            <div class="card card-body">  
+            <a href="{% url 'IssNotes' %}" class="btn btn-warning text-dark"> View Notes</a>
+            <a href="{% url 'IssWsheet' %}" class="btn btn-danger"> Worksheets</a>
+          </div>  
+        </div>
+</div>
+
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm bg-Danger">
+     </div>
+<div class="col-sm bg-Warning">
+        
+        <h4 class="btn btn-primary" data-bs-toggle="collapse" href="#UAESST_USER" role="button" aria-expanded="false" aria-controls="UAESST_USER">UAE SST</h4>
+          <div class="collapse " id="UAESST_USER">
+            <div class="card card-body">  
+                <a href="{% url 'UssNotes' %}" class="btn btn-warning text-dark"> View Notes</a>
+                <a href="{% url 'UssWsheet' %}" class="btn btn-danger"> Worksheets</a>       
+          </div>        
+          </div>        
+</div>
+      <div class="col-sm bg-Danger">
+            
+             
+      </div>
+     
+  </div>
+</div>
+
+    {% endif %}
+
+ 
+
+{% endblock content  %}
